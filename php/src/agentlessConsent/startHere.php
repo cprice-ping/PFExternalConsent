@@ -1,7 +1,7 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfed = "https://pingfed:9031";
+$pingfed = "https://localhost:9031";
 $clientId = "PingLogon";
 $redirectUri = "http%3A%2F%2Flocalhost%2FagentlessConsent%2FtokenSwap.html";
 
@@ -25,7 +25,7 @@ $pfURL = $pingfed . "/as/authorization.oauth2?client_id=" . $clientId . "&respon
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>AnyCompany Data Management</title>
+  <title>PingFed External Consent Demo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@ $pfURL = $pingfed . "/as/authorization.oauth2?client_id=" . $clientId . "&respon
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Remy'z Kewl App</h1>
+            <h1>PF OAuth External Consent Demo</h1>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ $pfURL = $pingfed . "/as/authorization.oauth2?client_id=" . $clientId . "&respon
  				
  				
 				 <?php
-						echo "<p align=\"center\"><input value=\"Get Mah Token\" type=\"submit\" class=\"btn btn-primary float-center\"\/></p>";
+						echo "<p align=\"center\"><input value=\"Get OIDC Token\" type=\"submit\" class=\"btn btn-primary float-center\"\/></p>";
 				
 				?>
            

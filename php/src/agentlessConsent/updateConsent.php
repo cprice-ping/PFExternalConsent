@@ -1,7 +1,8 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfed = "https://pingfed:9031";
+$pingfedBackchannel = "https://pingfed:9031";
+$pingfedFrontchannel = "https://localhost:9031";
 $adapterId = "OAuthConsent";
 $pingdir = "https://pingdirectory:1443";
 
@@ -182,7 +183,7 @@ $curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_PORT => "9031",
-  CURLOPT_URL => $pingfed. "/ext/ref/dropoff",
+  CURLOPT_URL => $pingfedBackchannel. "/ext/ref/dropoff",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -220,10 +221,7 @@ $newREF = $responseData->REF;
 
 
 // REDIRECT USER BACK TO PF RESUME URL
-
-
-
-$finalURL = $pingfed. $resumePath . "?REF=" . $newREF;
+$finalURL = $pingfedFrontchannel. $resumePath . "?REF=" . $newREF;
 
 header("Location: $finalURL"); 
 exit();

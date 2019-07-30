@@ -1,5 +1,4 @@
 dn: ou=Consents,${USER_BASE_DN}
-changetype: add
 objectClass: organizationalUnit
 objectClass: top
 ou: Consents

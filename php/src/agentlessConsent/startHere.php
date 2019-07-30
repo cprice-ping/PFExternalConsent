@@ -115,7 +115,7 @@ $pfURL = $pingfed . "/as/authorization.oauth2?client_id=" . $clientId . "&respon
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           
-          <p class="copyright text-muted">Copyright &copy; AnyCompany 2019</p>
+          <p class="copyright text-muted">Copyright &copy; Remy&Chris 2019</p>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 // SET SOME IMPORTANT VALUES
 $pingfed = "https://pingfed:9031";
-$adapterId = "ExternalConsent";
+$adapterId = "OAuthConsent";
 $pingdir = "https://pingdirectory:1443";
 
 // GET SCOPES AND RESUME FROM POST
@@ -196,7 +196,7 @@ curl_setopt_array($curl, array(
 
   CURLOPT_HTTPHEADER => array(
 	"accept: application/json",
-    "authorization: Basic YXBpdXNlcm5hbWU6UEA1NXcwcmQ=",
+    "authorization: Basic T0F1dGhDb25zZW50OjJDb25zZW50TTByZQ==",
     "ping.instanceid: " . $adapterId,
     "cache-control: no-cache"
   ),

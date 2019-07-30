@@ -2,7 +2,7 @@
 
 // SET SOME IMPORTANT VALUES
 $pingfedBackchannel = "https://pingfed:9031";
-$pingfedFrontchannel = "https://localhost:9031";
+$pingfedFrontchannel = "https://http://int-docker.cpricedomain.ping-eng.com:9031";
 $adapterId = "OAuthConsent";
 $pingdir = "https://pingdirectory:1443";
 
@@ -21,7 +21,7 @@ $curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_PORT => "1443",
-  CURLOPT_URL => $pingdir. "/consent/v1/consents?definition=pingfed-consent&subject=" . $userId . "",
+  CURLOPT_URL => $pingdir. "/consent/v1/consents?definition=PF-OAuth&subject=" . $userId . "",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -113,7 +113,7 @@ if ($existingConsent > 0){
 
 
 		//one day I won't be lazy and actually pull this from another API call
-		$definitionArray = array("id" => "pingfed-consent",
+		$definitionArray = array("id" => "PF-OAuth",
                      "version" => "1.1",
                      "locale" => "en-US");
                      
@@ -126,8 +126,8 @@ if ($existingConsent > 0){
 			"actor" => $userId,
 			"audience" => $audienceId,
 			"definition" => $definitionArray,
-			"dataText" => "PingFederate Consents v1.1",
-			"purposeText" => "PingFederate Consents v1.1",
+			"dataText" => "This record defines the OAuth Scopes allowed",
+			"purposeText" => "Used to tell PF what scopes to include in the access_token",
 			"data" => $uidArray
 		 );
 
@@ -242,7 +242,7 @@ exit();
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Remy'z Kewl App</title>
+  <title>PingFed External Consent Demo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -303,7 +303,7 @@ exit();
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           
-          <p class="copyright text-muted">Copyright &copy; AnyCompany 2019</p>
+          <p class="copyright text-muted">Copyright &copy; Remy&Chris 2019</p>
         </div>
       </div>
     </div>

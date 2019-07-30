@@ -1,9 +1,9 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfed = "https://localhost:9031";
+$pingfed = "https://int-docker.cpricedomain.ping-eng.com:9031";
 $clientId = "PingLogon";
-$redirectUri = "http%3A%2F%2Flocalhost%2FagentlessConsent%2FtokenSwap.html";
+$redirectUri = "http://int-docker.cpricedomain.ping-eng.com/agentlessConsent/tokenSwap.html";
 
 
 

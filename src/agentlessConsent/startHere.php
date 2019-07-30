@@ -1,8 +1,8 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfed = "https://pf93fat.acdocker.co:9031";
-$clientId = "remyzApp";
+$pingfed = "https://pingfed:9031";
+$clientId = "ExternalConsent";
 $redirectUri = "http%3A%2F%2Flocalhost%2FagentlessConsent%2FtokenSwap.html";
 
 

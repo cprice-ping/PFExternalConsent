@@ -1,8 +1,8 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfed = "https://pf93fat.acdocker.co:9031";
-$adapterId = "agentlessConsent";
+$pingfed = "https://pingfed:9031";
+$adapterId = "ExternalConsent";
 $pingdir = "https://pingdirectory:1443";
 
 // GET SCOPES AND RESUME FROM POST

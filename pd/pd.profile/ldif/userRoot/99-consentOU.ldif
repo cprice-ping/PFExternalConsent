@@ -1,4 +1,0 @@
-dn: ou=Consents,${USER_BASE_DN}
-objectClass: organizationalUnit
-objectClass: top
-ou: Consents

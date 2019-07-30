@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  pingfederate:
+    image: pingidentity/pingfederate:${PING_IDENTITY_DEVOPS_TAG}
+    environment:
+      - SERVER_PROFILE_URL=https://cprice-private1:4b244fc79a8783a33f0d09f0c6893e48bcb3d3f7@github.com/cprice-ping/Profile-PIX.git
+      - SERVER_PROFILE_PATH=pf
+      - VERBOSE=false
+    env_file:
+      # Configuration file created when setup.sh (Getting-started project root directory) is first run to source
+      # devops user/key details for evaluation licenses and for docker image/git tags
+      - PING_IDENTITY_DEVOPS_TAG=edge
+    ports:
+      - 9031:9031
+      - 9999:9999
+    networks:
+      - pingnet
+
+networks:
+    pingnet:

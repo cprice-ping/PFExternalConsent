@@ -31,13 +31,19 @@ services:
   pingdirectory:
     image: pingidentity/pingdirectory:${PING_IDENTITY_DEVOPS_TAG}
     environment:
-      - SERVER_PROFILE_URL=https://cprice-ping:1cead8e29c73e3ddfd76431612299393a6c00c4b@github.com/cprice-ping/PFExternalConsent.git
-      - SERVER_PROFILE_PATH=pd
-      - TOPOLOGY_PREFIX=03-full-stack_pingdirectory_
+    #  - SERVER_PROFILE_URL=https://cprice-ping:1cead8e29c73e3ddfd76431612299393a6c00c4b@github.com/cprice-ping/PFExternalConsent.git
+    #  - SERVER_PROFILE_PATH=pd
+    #  - TOPOLOGY_PREFIX=03-full-stack_pingdirectory_
     #  - SERVER_PROFILE_PARENT=BASELINE
     #  - SERVER_PROFILE_BASELINE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
     #  - SERVER_PROFILE_BASELINE_PATH=baseline/pingdirectory
 
+      - SERVER_PROFILE_URL=https://cprice-ping:1cead8e29c73e3ddfd76431612299393a6c00c4b@github.com@github.com/cprice-ping/PFExternalConsent.git
+      - SERVER_PROFILE_PATH=pd
+      - TOPOLOGY_PREFIX=03-full-stack_pingdirectory_
+      - SERVER_PROFILE_PARENT=BASELINE
+      - SERVER_PROFILE_BASELINE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+      - SERVER_PROFILE_BASELINE_PATH=baseline/pingdirectory
     env_file:
       - ~/.pingidentity/devops
     #volumes:

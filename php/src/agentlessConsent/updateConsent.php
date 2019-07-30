@@ -2,7 +2,7 @@
 
 // SET SOME IMPORTANT VALUES
 $pingfedBackchannel = "https://pingfed:9031";
-$pingfedFrontchannel = "https://http://int-docker.cpricedomain.ping-eng.com:9031";
+$pingfedFrontchannel = "https://int-docker.cpricedomain.ping-eng.com:9031";
 $adapterId = "OAuthConsent";
 $pingdir = "https://pingdirectory:1443";
 

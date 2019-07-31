@@ -16,6 +16,8 @@ $redirectUri = $appUrl . $_ENV["REDIRECT_URI"];
 
 $pfURL = $pingfed . "/as/authorization.oauth2?client_id=" . $clientId . "&response_type=code&scope=openid%20profile&redirect_uri=" . $redirectUri;
 
+echo $title;
+
 ?>
 
 

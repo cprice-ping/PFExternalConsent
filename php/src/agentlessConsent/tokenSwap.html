@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>AnyCompany Consent Management</title>
+  <title>PingFed OAuth External Consent Demo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -121,9 +121,7 @@
 			
 				let payload = "";
 			
-		   
-			
-				let baseURL = "https://pf93fat.acdocker.co:9031/as/token.oauth2?grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%2FagentlessConsent%2FtokenSwap.html&code=";                                
+				let baseURL = "https://int-docker.cpricedomain.ping-eng.com:9031/as/token.oauth2?grant_type=authorization_code&redirect_uri=http://int-docker.cpricedomain.ping-eng.com/agentlessConsent/tokenSwap.html&code=";                                
 				baseURL = baseURL.concat(codeValue);              
 				let checkNextStep = "";
 				let contenttype = "";

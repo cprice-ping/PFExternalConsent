@@ -20,7 +20,7 @@ $curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_PORT => "9031",
-  CURLOPT_URL => $pingfed . "/ext/ref/pickup?REF=" . $refId,
+  CURLOPT_URL => $pingfedUrl . "/ext/ref/pickup?REF=" . $refId,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,

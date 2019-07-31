@@ -3,11 +3,14 @@
 // Grab from the Environment
 // Inject appropriate values in the docker-compose.yaml file
 $title = $_ENV["PAGE_TITLE"];
+$appUrl = $_ENV["CONSENT_APP_URL"];
 
 // SET SOME IMPORTANT VALUES
-$pingfed = "https://int-docker.cpricedomain.ping-eng.com:9031";
-$clientId = "PingLogon";
-$redirectUri = "http://int-docker.cpricedomain.ping-eng.com/agentlessConsent/tokenSwap.html";
+$pingfedBase = $_ENV["PF_BASE_URL"];
+$pingfedPort = $_ENV["PF_BASE_PORT"];
+$pingfed = $pingfedBase . ":" . $pingfedPort;
+$clientId = $_ENV["AUTHZ_CLIENT"];
+$redirectUri = $appUrl . $_ENV["REDIRECT_URI"];
 
 
 

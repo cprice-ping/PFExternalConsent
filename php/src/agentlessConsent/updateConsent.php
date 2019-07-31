@@ -1,10 +1,21 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfedBackchannel = "https://int-docker.cpricedomain.ping-eng.com:9031";
-$pingfedFrontchannel = "https://int-docker.cpricedomain.ping-eng.com:9031";
-$adapterId = "OAuthConsent";
-$pingdir = "https://int-docker.cpricedomain.ping-eng.com:1443";
+$pingfed = $_ENV["PF_BASE_URL"];
+$pingfedPort = $_ENV["PF_BASE_PORT"];
+$pingdir = $_ENV["PD_BASE_URL"];
+$pingdirPort = $_ENV["PD_BASE_PORT"];
+
+// External Consent values
+$adapterId = $_ENV["CONSENT_APP"];
+$adapterPwd = $_ENV["CONSENT_APP_PWD"];
+$adapterCred = base64_decode($adapterId . ":" . $adapterPwd);
+
+// Set values for ConsentAPI calls
+$consentDef=$_ENV["CONSENT_DEF"];
+$consentAdmin=$_ENV["CONSENT_ADMIN"];
+$consentPwd=$_ENV["CONSENT_PWD"];
+$consentCred = base64_decode($consentAdmin . ":" . $consentPwd);
 
 // GET SCOPES AND RESUME FROM POST
 $finalScopes = $_POST['finalScopes'];
@@ -20,8 +31,8 @@ $appName = $_POST['appName'];
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_PORT => "1443",
-  CURLOPT_URL => $pingdir. "/consent/v1/consents?definition=PF-OAuth&subject=" . $userId . "",
+  CURLOPT_PORT => $pingdirPort,
+  CURLOPT_URL => $pingdir. "/consent/v1/consents?definition=" . $consentDef . "&subject=" . $userId . "",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -33,7 +44,7 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
     "accept: application/json",
-    "authorization: Basic Y249ZG1hbmFnZXI6MkRpcmVjdG9yeU0wcmUh",
+    "authorization: Basic " . $consentCred,
     "cache-control: no-cache",
   ),
 ));
@@ -77,7 +88,7 @@ if ($existingConsent > 0){
 
 
 		curl_setopt_array($curl, array(
-		  CURLOPT_PORT => "1443",
+		  CURLOPT_PORT => $pingdirPort,
 		  CURLOPT_URL => $pingdir. "/consent/v1/consents/" . $existingId,
 		  CURLOPT_RETURNTRANSFER => true,
 		  CURLOPT_ENCODING => "",
@@ -92,7 +103,7 @@ if ($existingConsent > 0){
 
 		  CURLOPT_HTTPHEADER => array(
 			"Content-Type: application/json",
-			"authorization: Basic Y249ZG1hbmFnZXI6MkRpcmVjdG9yeU0wcmUh"
+			"authorization: Basic " . $consentCred,
 		  ),
 		));
 
@@ -137,7 +148,7 @@ if ($existingConsent > 0){
 
 
 		curl_setopt_array($curl, array(
-		  CURLOPT_PORT => "1443",
+		  CURLOPT_PORT => $pingdirPort,
 		  CURLOPT_URL => $pingdir. "/consent/v1/consents",
 		  CURLOPT_RETURNTRANSFER => true,
 		  CURLOPT_ENCODING => "",
@@ -152,7 +163,7 @@ if ($existingConsent > 0){
 
 		  CURLOPT_HTTPHEADER => array(
 			"Content-Type: application/json",
-			"authorization: Basic Y249ZG1hbmFnZXI6MkRpcmVjdG9yeU0wcmUh"
+			"authorization: Basic " . $consentCred,
 		  ),
 		));
 
@@ -182,8 +193,8 @@ $curl = curl_init();
 
 
 curl_setopt_array($curl, array(
-  CURLOPT_PORT => "9031",
-  CURLOPT_URL => $pingfedBackchannel. "/ext/ref/dropoff",
+  CURLOPT_PORT => $pingfedPort,
+  CURLOPT_URL => $pingfed. "/ext/ref/dropoff",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -197,7 +208,7 @@ curl_setopt_array($curl, array(
 
   CURLOPT_HTTPHEADER => array(
 	"accept: application/json",
-    "authorization: Basic T0F1dGhDb25zZW50OjJDb25zZW50TTByZQ==",
+    "authorization: Basic " . $adapterCred,
     "ping.instanceid: " . $adapterId,
     "cache-control: no-cache"
   ),
@@ -221,7 +232,7 @@ $newREF = $responseData->REF;
 
 
 // REDIRECT USER BACK TO PF RESUME URL
-$finalURL = $pingfedFrontchannel. $resumePath . "?REF=" . $newREF;
+$finalURL = $pingfed. $resumePath . "?REF=" . $newREF;
 
 header("Location: $finalURL"); 
 exit();

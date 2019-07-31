@@ -38,11 +38,9 @@ curl_setopt_array($curl, array(
 
 ));
 
-echo "@@ Adapter Cred: " . $adapterCred . "/n";
-
 echo "@@ RefID: " . $refId . "/n";
-
 echo "@@ resumePath: " . $resumePath . "/n";
+echo "@@ Adapter Cred: " . $adapterCred . "/n";
 
 $response = curl_exec($curl);
 $err = curl_error($curl);

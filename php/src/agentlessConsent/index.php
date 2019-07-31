@@ -81,7 +81,7 @@ $requestedScopesArray = explode(" ",$requestedScopes);
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Remy'z Kewl App</title>
+  <title>OAuth External Consent Demo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

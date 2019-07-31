@@ -253,7 +253,7 @@ exit();
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>PingFed External Consent Demo</title>
+  <title>OAuth External Consent Demo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

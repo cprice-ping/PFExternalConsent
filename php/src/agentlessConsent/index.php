@@ -18,7 +18,7 @@ $curl = curl_init();
 
 
 curl_setopt_array($curl, array(
-  CURLOPT_PORT => "9031",
+  CURLOPT_PORT => $pingfedPort,
   CURLOPT_URL => $pingfed . "/ext/ref/pickup?REF=" . $refId,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
@@ -38,6 +38,7 @@ curl_setopt_array($curl, array(
 
 ));
 
+console.log("@@ PickupURL: ", $curl);
 
 $response = curl_exec($curl);
 $err = curl_error($curl);

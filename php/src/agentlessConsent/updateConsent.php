@@ -1,10 +1,10 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfedBackchannel = "https://pingfed:9031";
+$pingfedBackchannel = "https://int-docker.cpricedomain.ping-eng.com:9031";
 $pingfedFrontchannel = "https://int-docker.cpricedomain.ping-eng.com:9031";
 $adapterId = "OAuthConsent";
-$pingdir = "https://pingdirectory:1443";
+$pingdir = "https://int-docker.cpricedomain.ping-eng.com:1443";
 
 // GET SCOPES AND RESUME FROM POST
 $finalScopes = $_POST['finalScopes'];

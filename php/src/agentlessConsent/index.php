@@ -38,7 +38,7 @@ curl_setopt_array($curl, array(
 
 ));
 
-error_log("@@ PickupURL: " . $curl);
+echo "@@ PickupURL: " . $curl;
 
 $response = curl_exec($curl);
 $err = curl_error($curl);

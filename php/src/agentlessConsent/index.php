@@ -38,8 +38,11 @@ curl_setopt_array($curl, array(
 
 ));
 
-echo "@@ PingfedPickupURL: " . $pingfed;
+echo "@@ PickupURL: " . $pingfed . "---" . $pingfedPort;
+
 echo "@@ RefID: " . $refId;
+
+echo "@@ resumePath: " . $resumePath;
 
 $response = curl_exec($curl);
 $err = curl_error($curl);

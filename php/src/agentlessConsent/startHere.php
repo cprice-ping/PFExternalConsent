@@ -25,7 +25,7 @@ $pfURL = $pingfed . "/as/authorization.oauth2?client_id=" . $clientId . "&respon
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>PingFed External Consent Demo</title>
+  <title>${PAGE_TITLE}</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

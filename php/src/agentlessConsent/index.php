@@ -1,9 +1,8 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfedUrl = $_ENV["PF_BASE_URL"];
+$pingfed = $_ENV["PF_BASE_URL"];
 $pingfedPort = $_ENV["PF_BASE_PORT"];
-$pingfed = $pingfedUrl . ":" . $pingfedPort;
 $adapterId = $_ENV["CONSENT_APP"];
 
 // External Consent values
@@ -20,7 +19,7 @@ $curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_PORT => "9031",
-  CURLOPT_URL => $pingfedUrl . "/ext/ref/pickup?REF=" . $refId,
+  CURLOPT_URL => $pingfed . "/ext/ref/pickup?REF=" . $refId,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,

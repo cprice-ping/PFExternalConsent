@@ -39,7 +39,7 @@ curl_setopt_array($curl, array(
 
 ));
 
-echo "@@ RefID: " . $refId . "\n";
+echo "@@ RefID: " . $_POST['REF'] . "\n";
 echo "@@ resumePath: " . $resumePath . "\n";
 echo "@@ Adapter Cred: " . $adapterCred . "\n";
 

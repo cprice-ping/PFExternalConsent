@@ -232,7 +232,7 @@ $newREF = $responseData->REF;
 
 
 // REDIRECT USER BACK TO PF RESUME URL
-$finalURL = $pingfed. $resumePath . "?REF=" . $newREF;
+$finalURL = $pingfed. ":" . $pingfedPort . $resumePath . "?REF=" . $newREF;
 
 header("Location: $finalURL"); 
 exit();

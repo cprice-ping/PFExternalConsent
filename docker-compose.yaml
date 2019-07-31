@@ -21,7 +21,7 @@ services:
 
       # PingDir details (for ConsentAPI)
       - PD_BASE_URL=https://int-docker.cpricedomain.ping-eng.com
-      - PD_BASE_URL=1443
+      - PD_BASE_PORT=1443
       - CONSENT_ADMIN=cn=dmanager
       - CONSENT_PWD=2DirectoryM0re!
       - CONSENT_DEF=PA-OAuth

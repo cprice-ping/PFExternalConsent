@@ -1,5 +1,9 @@
 <?php
 
+// GET AGENTLESS FROM POST
+$refId = $_POST["REF"];
+$resumePath = $_POST["resumePath"];
+
 // SET SOME IMPORTANT VALUES
 $title = $_ENV["PAGE_TITLE"];
 $pingfed = $_ENV["PF_BASE_URL"];
@@ -11,12 +15,7 @@ $adapterId = $_ENV["CONSENT_APP"];
 $adapterPwd = $_ENV["CONSENT_APP_PWD"];
 $adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
 
-// GET AGENTLESS FROM POST
-$refId = $_POST['REF'];
-$resumePath = $_POST['resumePath'];
-
 $curl = curl_init();
-
 
 curl_setopt_array($curl, array(
   CURLOPT_PORT => $pingfedPort,
@@ -39,9 +38,8 @@ curl_setopt_array($curl, array(
 
 ));
 
-echo "@@ RefID: " . $_POST['REF'] . "\n";
+echo "@@ RefID: " . $refId . "\n";
 echo "@@ resumePath: " . $resumePath . "\n";
-echo "@@ Adapter Cred: " . $adapterCred . "\n";
 
 $response = curl_exec($curl);
 $err = curl_error($curl);

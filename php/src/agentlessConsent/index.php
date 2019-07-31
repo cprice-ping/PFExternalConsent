@@ -1,8 +1,15 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfed = "https://pf93fat.acdocker.co:9031";
-$adapterId = "agentlessConsent";
+$pingfedUrl = $_ENV["PF_BASE_URL"];
+$pingfedPort = $_ENV["PF_BASE_PORT"];
+$pingfed = $pingfedUrl . ":" . $pingfedPort;
+$adapterId = $_ENV["CONSENT_APP"];
+
+// External Consent values
+$adapterId = $_ENV["CONSENT_APP"];
+$adapterPwd = $_ENV["CONSENT_APP_PWD"];
+$adapterCred = base64_decode($adapterId . ":" . $adapterPwd);
 
 // GET AGENTLESS FROM POST
 $refId = $_POST['REF'];
@@ -25,7 +32,7 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
     "accept: application/json",
-    "authorization: Basic YXBpdXNlcm5hbWU6UEA1NXcwcmQ=",
+    "authorization: Basic " . $adapterCred,
     "ping.instanceid: " . $adapterId,
     "cache-control: no-cache",
   ),

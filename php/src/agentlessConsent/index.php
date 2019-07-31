@@ -1,6 +1,7 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
+$title = $_ENV["PAGE_TITLE"];
 $pingfed = $_ENV["PF_BASE_URL"];
 $pingfedPort = $_ENV["PF_BASE_PORT"];
 $adapterId = $_ENV["CONSENT_APP"];
@@ -8,7 +9,7 @@ $adapterId = $_ENV["CONSENT_APP"];
 // External Consent values
 $adapterId = $_ENV["CONSENT_APP"];
 $adapterPwd = $_ENV["CONSENT_APP_PWD"];
-$adapterCred = base64_decode($adapterId . ":" . $adapterPwd);
+$adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
 
 // GET AGENTLESS FROM POST
 $refId = $_POST['REF'];
@@ -83,7 +84,7 @@ $requestedScopesArray = explode(" ",$requestedScopes);
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>OAuth External Consent Demo</title>
+  <title><?php $title ?></title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

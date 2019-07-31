@@ -12,9 +12,6 @@ $pingfed = $pingfedBase . ":" . $pingfedPort;
 $clientId = $_ENV["AUTHZ_CLIENT"];
 $redirectUri = $appUrl . $_ENV["REDIRECT_URI"];
 
-
-
-
 // formulate PF Authz URL with Param
 
 $pfURL = $pingfed . "/as/authorization.oauth2?client_id=" . $clientId . "&response_type=code&scope=openid%20profile&redirect_uri=" . $redirectUri;

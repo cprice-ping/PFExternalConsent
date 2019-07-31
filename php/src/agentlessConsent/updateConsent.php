@@ -9,7 +9,7 @@ $pingdirPort = $_ENV["PD_BASE_PORT"];
 // External Consent values
 $adapterId = $_ENV["CONSENT_APP"];
 $adapterPwd = $_ENV["CONSENT_APP_PWD"];
-$adapterCred = base64_decode($adapterId . ":" . $adapterPwd);
+$adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
 
 // Set values for ConsentAPI calls
 $consentDef=$_ENV["CONSENT_DEF"];

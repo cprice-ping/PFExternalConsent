@@ -24,7 +24,7 @@ services:
       - PD_BASE_PORT=1443
       - CONSENT_ADMIN=cn=dmanager
       - CONSENT_PWD=2DirectoryM0re!
-      - CONSENT_DEF=PA-OAuth
+      - CONSENT_DEF=PF-OAuth
 
     ports:
       - 80:80

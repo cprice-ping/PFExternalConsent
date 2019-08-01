@@ -124,9 +124,9 @@ if ($existingConsent > 0){
 
 
 		//one day I won't be lazy and actually pull this from another API call
-		$definitionArray = array("id" => "PF-OAuth",
-                     "version" => "1.1",
-                     "locale" => "en-US");
+		$definitionArray = array("id" => $consentDef,
+                     "version" => "1.0",
+                     "locale" => "en");
                      
                      
 		$uidArray = array("scopes" => $finalScopes);

@@ -15,10 +15,7 @@ $adapterId = $_ENV['CONSENT_APP'];
 $adapterPwd = $_ENV['CONSENT_APP_PWD'];
 $adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
 
-echo "@@ RefID: " . $refId . "<br>";
-echo "@@ resumePath: " . $resumePath . "<br>";
-
-// $curl = curl_init();
+ $curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_PORT => $pingfedPort,

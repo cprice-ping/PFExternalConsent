@@ -53,6 +53,8 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
+echo "@@ Consent Response: " . $response;
+
 curl_close($curl);
 
 if ($err) {
@@ -184,9 +186,6 @@ if ($existingConsent > 0){
 // PERFORM POST TO PF AS FAR AS APPROVED SCOPES
 
 $data2 = array("scopes" => $finalScopes);
-
-
-
 $data2_string = json_encode($data2);
 
 $curl = curl_init();
@@ -234,7 +233,7 @@ $newREF = $responseData->REF;
 // REDIRECT USER BACK TO PF RESUME URL
 $finalURL = $pingfed. ":" . $pingfedPort . $resumePath . "?REF=" . $newREF;
 
-header("Location: $finalURL"); 
+// header("Location: $finalURL"); 
 exit();
 
 

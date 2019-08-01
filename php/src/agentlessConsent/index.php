@@ -15,6 +15,8 @@ $adapterId = $_ENV['CONSENT_APP'];
 $adapterPwd = $_ENV['CONSENT_APP_PWD'];
 $adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
 
+echo "PingFed: " . $pingfed . ":" $pingfedPort . "<br>";
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(

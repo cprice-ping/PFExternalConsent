@@ -17,9 +17,8 @@ $adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
 
 echo "@@ RefID: " . $refId . "<br>";
 echo "@@ resumePath: " . $resumePath . "<br>";
-echo "@@ PingFed: " . $pingfed . ":" . $pingfedPort . "<br>";
 
-$curl = curl_init();
+// $curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_PORT => $pingfedPort,
@@ -40,10 +39,10 @@ curl_setopt_array($curl, array(
     "cache-control: no-cache",
   ),
 
-));
+ ));
 
-$response = curl_exec($curl);
-$err = curl_error($curl);
+ $response = curl_exec($curl);
+ $err = curl_error($curl);
 
 curl_close($curl);
 

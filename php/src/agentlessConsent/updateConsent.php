@@ -15,7 +15,7 @@ $adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
 $consentDef=$_ENV["CONSENT_DEF"];
 $consentAdmin=$_ENV["CONSENT_ADMIN"];
 $consentPwd=$_ENV["CONSENT_PWD"];
-$consentCred = base64_decode($consentAdmin . ":" . $consentPwd);
+$consentCred = base64_encode($consentAdmin . ":" . $consentPwd);
 
 // GET SCOPES AND RESUME FROM POST
 $finalScopes = $_POST['finalScopes'];

@@ -13,10 +13,7 @@ $clientId = $_ENV["AUTHZ_CLIENT"];
 $redirectUri = $appUrl . $_ENV["REDIRECT_URI"];
 
 // formulate PF Authz URL with Param
-
 $pfURL = $pingfed . "/as/authorization.oauth2?client_id=" . $clientId . "&response_type=code&scope=openid%20profile&redirect_uri=" . $redirectUri;
-
-echo $title;
 
 ?>
 
@@ -31,7 +28,7 @@ echo $title;
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title><?php $_ENV["PAGE_TITLE"] ?></title>
+  <title><?php $title; ?></title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

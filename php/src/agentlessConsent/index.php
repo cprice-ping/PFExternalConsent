@@ -38,8 +38,8 @@ curl_setopt_array($curl, array(
 
 ));
 
-echo "@@ RefID: " . $refId . "\n";
-echo "@@ resumePath: " . $resumePath . "\n";
+echo "@@ RefID: " . $refId . "<br>";
+echo "@@ resumePath: " . $resumePath . "<br>";
 echo "@@ creds: " . $adapterCred;
 
 $response = curl_exec($curl);

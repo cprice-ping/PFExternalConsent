@@ -24,6 +24,7 @@ $userId = $_POST['userId'];
 $audienceId = $_POST['audienceId'];
 $appName = $_POST['appName'];
 
+echo "@@ Cred: " . $consentCred . "<br>";
 
 // build curl object to identify existing consents
 // =======================================================================

@@ -15,7 +15,9 @@ $adapterId = $_ENV['CONSENT_APP'];
 $adapterPwd = $_ENV['CONSENT_APP_PWD'];
 $adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
 
-echo "PingFed: " . $pingfed . ":" $pingfedPort . "<br>";
+echo "@@ RefID: " . $refId . "<br>";
+echo "@@ resumePath: " . $resumePath . "<br>";
+echo "@@ PingFed: " . $pingfed . ":" . $pingfedPort . "<br>";
 
 $curl = curl_init();
 
@@ -39,11 +41,6 @@ curl_setopt_array($curl, array(
   ),
 
 ));
-
-echo "@@ RefID: " . $refId . "<br>";
-echo "@@ resumePath: " . $resumePath . "<br>";
-echo "@@ creds: " . $adapterCred . "<br>";
-echo "@@ curl: " . $curl . "<br>";
 
 $response = curl_exec($curl);
 $err = curl_error($curl);

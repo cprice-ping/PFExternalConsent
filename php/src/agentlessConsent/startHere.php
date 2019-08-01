@@ -31,7 +31,7 @@ echo $title;
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title><?php $title ?></title>
+  <title><?php $_ENV["PAGE_TITLE"] ?></title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

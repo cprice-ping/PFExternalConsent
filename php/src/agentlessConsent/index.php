@@ -40,7 +40,8 @@ curl_setopt_array($curl, array(
 
 echo "@@ RefID: " . $refId . "<br>";
 echo "@@ resumePath: " . $resumePath . "<br>";
-echo "@@ creds: " . $adapterCred;
+echo "@@ creds: " . $adapterCred . "<br>";
+echo "@@ curl: " . $curl . "<br>";
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
@@ -191,7 +192,7 @@ $requestedScopesArray = explode(" ",$requestedScopes);
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           
-          <p class="copyright text-muted">Copyright &copy; AnyCompany 2019</p>
+          <p class="copyright text-muted">Copyright &copy; Remy&Chris 2019</p>
         </div>
       </div>
     </div>

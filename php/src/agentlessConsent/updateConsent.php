@@ -24,8 +24,6 @@ $userId = $_POST['userId'];
 $audienceId = $_POST['audienceId'];
 $appName = $_POST['appName'];
 
-echo "@@ Cred: " . $consentCred . "<br>";
-
 // build curl object to identify existing consents
 // =======================================================================
 
@@ -53,8 +51,6 @@ curl_setopt_array($curl, array(
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
-
-echo "@@ Consent Response: " . $response;
 
 curl_close($curl);
 
@@ -234,10 +230,8 @@ $newREF = $responseData->REF;
 // REDIRECT USER BACK TO PF RESUME URL
 $finalURL = $pingfed. ":" . $pingfedPort . $resumePath . "?REF=" . $newREF;
 
-// header("Location: $finalURL"); 
+header("Location: $finalURL"); 
 exit();
-
-
 
 
 ?>

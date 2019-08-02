@@ -48,7 +48,6 @@ curl_setopt_array($curl, array(
   ),
 ));
 
-
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
@@ -84,7 +83,6 @@ if ($existingConsent > 0){
 		$data2_string = json_encode($data2);
 		
 		$curl = curl_init();
-
 
 		curl_setopt_array($curl, array(
 		  CURLOPT_PORT => $pingdirPort,

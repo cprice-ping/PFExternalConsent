@@ -2,6 +2,13 @@ version: "3.1"
 
 services:
 
+  py:
+    image: pricecs/oauthconsent-py:latest
+    ports:
+      - 88:80
+    networks:
+      - pingnet-dmz
+
   php:
     image: pricecs/oauthconsent:latest
     environment:
@@ -38,7 +45,7 @@ services:
     - PING_IDENTITY_DEVOPS_USER=cprice@pingidentity.com
     - PING_IDENTITY_DEVOPS_KEY=f4f60e7a-e3ab-4c71-8e34-98ff2786b02e
 
-    - SERVER_PROFILE_URL=https://cprice-ping:1cead8e29c73e3ddfd76431612299393a6c00c4b@github.com/cprice-ping/PFExternalConsent.git
+    - SERVER_PROFILE_URL=https://cprice-ping:6b433adbb7ffe98fd619138d46ea675c30c8f8e6@github.com/cprice-ping/PFExternalConsent.git
     - SERVER_PROFILE_PATH=pf
     
     #volumes:
@@ -57,7 +64,7 @@ services:
     - PING_IDENTITY_DEVOPS_USER=cprice@pingidentity.com
     - PING_IDENTITY_DEVOPS_KEY=f4f60e7a-e3ab-4c71-8e34-98ff2786b02e
 
-    - SERVER_PROFILE_URL=https://cprice-ping:1cead8e29c73e3ddfd76431612299393a6c00c4b@github.com/cprice-ping/PFExternalConsent.git
+    - SERVER_PROFILE_URL=https://cprice-ping:6b433adbb7ffe98fd619138d46ea675c30c8f8e6@github.com/cprice-ping/PFExternalConsent.git
     - SERVER_PROFILE_PATH=pd
     - TOPOLOGY_PREFIX=03-full-stack_pingdirectory_
     - SERVER_PROFILE_PARENT=BASELINE

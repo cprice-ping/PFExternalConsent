@@ -1,6 +1,9 @@
-from flask import Flask, request
-app = Flask(__name__)
-@app.route('/', methods=['POST'])
-def result():
-    print(request.form['REF'])
-    print(request.form['resumePath'])
+import http.server
+import socketserver
+
+PORT = 8080
+Handler = http.server.SimpleHTTPRequestHandler
+
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print("serving at port", PORT)
+    httpd.serve_forever()

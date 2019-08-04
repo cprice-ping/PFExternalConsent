@@ -108,9 +108,9 @@
   		// ----------- GET AT --------------------
   		 		
         
-        function getAccessToken() {
+      function getAccessToken() {
 
-			let urlValue = window.location.href;
+			  let urlValue = window.location.href;
             let codePosition = urlValue.search("code=");
             let codeValue = urlValue.substring(codePosition + 5);
             
@@ -118,10 +118,13 @@
             
 				console.log(codeValue);
 			
+      // Get PF URL from referrer
+        let pingfed = document.referrer.split( '/' );
 			
 				let payload = "";
 			
-				let baseURL = "https://int-docker.cpricedomain.ping-eng.com:9031/as/token.oauth2?grant_type=authorization_code&redirect_uri=http://int-docker.cpricedomain.ping-eng.com/agentlessConsent/tokenSwap.html&code=";                                
+				// let baseURL = "https://int-docker.cpricedomain.ping-eng.com:9031/as/token.oauth2?grant_type=authorization_code&redirect_uri=http://int-docker.cpricedomain.ping-eng.com/agentlessConsent/tokenSwap.html&code=";                                
+				let baseURL = pingfed + "/as/token.oauth2?grant_type=authorization_code&redirect_uri=http://int-docker.cpricedomain.ping-eng.com/agentlessConsent/tokenSwap.html";                                
 				baseURL = baseURL.concat(codeValue);              
 				let checkNextStep = "";
 				let contenttype = "";

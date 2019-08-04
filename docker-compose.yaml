@@ -1,13 +1,12 @@
 version: "3.1"
 
 services:
-
-  py:
-    image: pricecs/oauthconsent-py:latest
-    ports:
-      - 88:80
-    networks:
-      - pingnet-dmz
+#  py:
+#    image: pricecs/oauthconsent-py:latest
+#    ports:
+#      - 88:80
+#    networks:
+#      - pingnet-dmz
 
   php:
     image: pricecs/oauthconsent:latest

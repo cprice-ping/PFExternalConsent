@@ -114,19 +114,19 @@
             
             if (codePosition != -1) {
             
-				console.log(codeValue);
+				// console.log(codeValue);
 			
       // Get PF URL from referrer
         let pingfed = document.referrer.split( '/' );
 
-        console.log(pingfed);
-        console.log(urlValue);
+        console.log("PingFed: ", pingfed);
+        console.log("URL Value: ", urlValue);
 			
 				let payload = "";
 			
 				let baseURL = "https://int-docker.cpricedomain.ping-eng.com:9031/as/token.oauth2?grant_type=authorization_code&redirect_uri=http://int-docker.cpricedomain.ping-eng.com/agentlessConsent/tokenSwap.html&code=";                                
         // let baseURL = pingfed + "/as/token.oauth2?grant_type=authorization_code&redirect_uri=" + urlValue;
-        console.log(baseURL);
+        // console.log(baseURL);
         
 				baseURL = baseURL.concat(codeValue);              
 				let checkNextStep = "";

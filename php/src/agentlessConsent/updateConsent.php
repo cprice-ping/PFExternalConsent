@@ -177,11 +177,19 @@ if ($existingConsent > 0){
 
 }
 
-
+//TEST
 // PERFORM POST TO PF AS FAR AS APPROVED SCOPES
 
-$data2 = array("scopes" => $finalScopes);
+$finalScopesString = "";
+
+foreach ($finalScopes as $arrayVal)
+			{
+				$finalScopesString = $finalScopesString . $arrayVal . " ";		
+			}
+					
+$data2 = array("scopes" => $finalScopesString);
 $data2_string = json_encode($data2);
+
 
 $curl = curl_init();
 

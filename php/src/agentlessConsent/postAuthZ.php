@@ -160,8 +160,9 @@ $requestedScopesArray = explode(" ",$requestedScopes);
 						echo "<br/>";		
 					}
 					
-					echo "<p><input type=\"submit\" class=\"btn btn-primary float-right\"\/>Yes, I consent</p>";
+					echo "<p><input type=\"submit\" value=\"WOOOO\" class=\"btn btn-primary float-right\"\/>Yes, I consent</p>";
 				
+					
 				?>
 				
 		   </form>

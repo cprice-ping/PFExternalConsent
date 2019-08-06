@@ -1,32 +1,25 @@
 version: "3.1"
 
 services:
-#  py:
-#    image: pricecs/oauthconsent-py:latest
-#    ports:
-#      - 88:80
-#    networks:
-#      - pingnet-dmz
-
   php:
     image: pricecs/oauthconsent:latest
     environment:
       - PAGE_TITLE=External OAuth Consent
 
       # PingFed Details (for OIDC calls)
-      - PF_BASE_URL=https://int-docker.cpricedomain.ping-eng.com
+      - PF_BASE_URL=https://{{Your Docker-Compose Host}}
       - PF_BASE_PORT=9031
       - AUTHZ_CLIENT=PingLogon
       - AUTHZ_SECRET=2FederateM0re
       - REDIRECT_URI=/agentlessConsent/tokenSwap.html
 
       # OAuth External Consent app
-      - CONSENT_APP_URL=http://int-docker.cpricedomain.ping-eng.com
+      - CONSENT_APP_URL=http://{{Your Docker-Compose Host}}
       - CONSENT_APP=OAuthConsent
       - CONSENT_APP_PWD=2ConsentM0re
 
       # PingDir details (for ConsentAPI)
-      - PD_BASE_URL=https://int-docker.cpricedomain.ping-eng.com
+      - PD_BASE_URL=https://{{Your Docker-Compose Host}}
       - PD_BASE_PORT=1443
       - CONSENT_ADMIN=cn=administrator
       - CONSENT_PWD=2FederateM0re
@@ -41,10 +34,7 @@ services:
     image: pingidentity/pingfederate:edge
     command: wait-for pingdirectory:389 -t 300 -- entrypoint.sh start-server
     environment:
-    - PING_IDENTITY_DEVOPS_USER=cprice@pingidentity.com
-    - PING_IDENTITY_DEVOPS_KEY=f4f60e7a-e3ab-4c71-8e34-98ff2786b02e
-
-    - SERVER_PROFILE_URL=https://cprice-ping:6b433adbb7ffe98fd619138d46ea675c30c8f8e6@github.com/cprice-ping/PFExternalConsent.git
+    - SERVER_PROFILE_URL=https://github.com/cprice-ping/PFExternalConsent.git
     - SERVER_PROFILE_PATH=pf
     
     #volumes:
@@ -60,10 +50,7 @@ services:
   pingdirectory:
     image: pingidentity/pingdirectory:edge
     environment:
-    - PING_IDENTITY_DEVOPS_USER=cprice@pingidentity.com
-    - PING_IDENTITY_DEVOPS_KEY=f4f60e7a-e3ab-4c71-8e34-98ff2786b02e
-
-    - SERVER_PROFILE_URL=https://cprice-ping:6b433adbb7ffe98fd619138d46ea675c30c8f8e6@github.com/cprice-ping/PFExternalConsent.git
+    - SERVER_PROFILE_URL=https://github.com/cprice-ping/PFExternalConsent.git
     - SERVER_PROFILE_PATH=pd
     - TOPOLOGY_PREFIX=03-full-stack_pingdirectory_
     - SERVER_PROFILE_PARENT=BASELINE
@@ -82,8 +69,6 @@ services:
   pingdataconsole:
     image: pingidentity/pingdataconsole:edge
     environment:
-    - PING_IDENTITY_DEVOPS_USER=cprice@pingidentity.com
-    - PING_IDENTITY_DEVOPS_KEY=f4f60e7a-e3ab-4c71-8e34-98ff2786b02e
     ports:
       - 8080:8080
       - 8443:8443

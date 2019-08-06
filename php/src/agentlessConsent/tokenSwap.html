@@ -119,14 +119,14 @@
       // Get PF URL from referrer
         let pingfed = document.referrer.split( '/' );
 
-        console.log("PingFed: ", pingfed[2].toString());
-        console.log("URL Value: ", urlValue);
+        //console.log("PingFed: ", pingfed[2].toString());
+        //console.log("URL Value: ", urlValue);
 			
 				let payload = "";
 			
-				let baseURL = "https://int-docker.cpricedomain.ping-eng.com:9031/as/token.oauth2?grant_type=authorization_code&redirect_uri=http://int-docker.cpricedomain.ping-eng.com/agentlessConsent/tokenSwap.html&code=";                                
-        // let baseURL = pingfed + "/as/token.oauth2?grant_type=authorization_code&redirect_uri=" + urlValue;
-        // console.log(baseURL);
+				//let baseURL = "https://int-docker.cpricedomain.ping-eng.com:9031/as/token.oauth2?grant_type=authorization_code&redirect_uri=http://int-docker.cpricedomain.ping-eng.com/agentlessConsent/tokenSwap.html&code=";                                
+        let baseURL = "https://" + pingfed[2].toString() + "/as/token.oauth2?grant_type=authorization_code&redirect_uri=" + urlValue;
+        console.log(baseURL);
         
 				baseURL = baseURL.concat(codeValue);              
 				let checkNextStep = "";

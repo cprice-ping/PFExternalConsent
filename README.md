@@ -14,7 +14,7 @@ This repo is a PHP example of how to use the PingDirectory ConsentAPI to store t
 
 To start this demo, modify the environment variables in `docker-compose.yaml` to reflect where you are deploying the stack. Currently, you need to manually modify the **pingfederate** `baseURL` to match.
 
-Then, go to http://int-docker.cpricedomain.ping-eng.com/agentlessConsent/ to start the flow.
+Then, go to http://{{YOUR_DOCKER_HOST}}/agentlessConsent/ to start the flow.
 
 Demo user credential:
 * User.0 \ 2FederateM0re

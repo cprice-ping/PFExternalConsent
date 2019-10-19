@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urn:AdapterConfiguration authnCtxClassRef="" isInheritAttributeSettings="false" isInheritAttributeMapping="false" maskOgnlValues="false" isInheritExtendedContractAttributes="false" name="OAuth Consent" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
     <urn:Fields>
-        <urn:Field name="Authentication Endpoint">http://${CONSENT_APP_URL}/agentlessConsent/postAuthZ.php</urn:Field>
+        <urn:Field name="Authentication Endpoint">${CONSENT_APP_URL}/agentlessConsent/postAuthZ.php</urn:Field>
         <urn:Field name="User Name">OAuthConsent</urn:Field>
         <urn:Field name="Pass Phrase">eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiI5LjMuMC45In0..DzDdouKyk_5YW4pT95wjeg.PhgZW6nfUB03c6AUg1CRGQ.naVWxsat8sgH1AfUfKq14A</urn:Field>
         <urn:Field name="Allowed Subject DN"/>

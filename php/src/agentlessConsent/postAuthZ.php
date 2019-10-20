@@ -8,12 +8,13 @@ $resumePath = $_POST['resumePath'];
 $title = $_ENV["PAGE_TITLE"];
 $pingfed = $_ENV["PF_BASE_URL"];
 $pingfedPort = $_ENV["PF_BASE_PORT"];
-$adapterId = $_ENV["CONSENT_APP"];
 
 // External Consent values
 $adapterId = $_ENV['CONSENT_APP'];
 $adapterPwd = $_ENV['CONSENT_APP_PWD'];
 $adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
+
+console.log($pingfed . "/ext/ref/pickup?REF=" . $refId);
 
  $curl = curl_init();
 

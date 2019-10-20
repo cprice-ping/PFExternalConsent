@@ -14,7 +14,9 @@ $adapterId = $_ENV['CONSENT_APP'];
 $adapterPwd = $_ENV['CONSENT_APP_PWD'];
 $adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
 
-console.log($pingfed . "/ext/ref/pickup?REF=" . $refId);
+// Show all Variables defined
+$allVars = get_defined_vars();
+print_r($allVars);
 
  $curl = curl_init();
 

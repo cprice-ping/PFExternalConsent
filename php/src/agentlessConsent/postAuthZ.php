@@ -14,10 +14,6 @@ $adapterId = $_ENV['CONSENT_APP'];
 $adapterPwd = $_ENV['CONSENT_APP_PWD'];
 $adapterCred = base64_encode($adapterId . ":" . $adapterPwd);
 
-// Show all Variables defined
-$allVars = get_defined_vars();
-print_r($allVars);
-
  $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -55,6 +51,9 @@ if ($err) {
 // parse response
 
 $responseData = json_decode($response, false);
+
+print_r($response);
+
 $escapeUserKey = "chainedattr.USER_KEY";
 $escapeAppName = "com.pingidentity.adapter.input.parameter.application.name";
 $escapeScopes = "com.pingidentity.adapter.input.parameter.oauth.scope";

@@ -52,13 +52,14 @@ if ($err) {
 
 $responseData = json_decode($response, false);
 
+$escapeUserName = "chainedattr.USER_NAME";
 $escapeUserKey = "chainedattr.USER_KEY";
 $escapeAppName = "com.pingidentity.adapter.input.parameter.application.name";
 $escapeScopes = "com.pingidentity.adapter.input.parameter.oauth.scope";
 $escapeAudience = "com.pingidentity.adapter.input.parameter.oauth.client.id";
 
-
 $userKey = $responseData->$escapeUserKey;
+$userName = $responseData->$escapeUserName;
 $appName =  $responseData->$escapeAppName;
 $requestedScopes = $responseData->$escapeScopes;
 $audienceId = $responseData->$escapeAudience;
@@ -127,7 +128,7 @@ $requestedScopesArray = explode(" ",$requestedScopes);
           <div class="site-heading">
             <h1>External Consent App Approval</h1><br/>
             <h2><?php  echo $appName  ?></h2>
-            <h3>You are logged in as <?php  echo $userKey  ?></h3>
+            <h3>You are logged in as <?php  echo $userName  ?></h3>
            </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfed = "https://pingfederate";
+$pingfedFront = $_ENV["PF_BASE_URL"];
+$pingfedBack = "https://pingfederate";
 $pingfedPort = $_ENV["PF_BASE_PORT"];
 $pingdir = "https://pingdirectory";
 $pingdirPort = "443";
@@ -230,7 +231,7 @@ $responseData = json_decode($response, false);
 $newREF = $responseData->REF;
 
 // REDIRECT USER BACK TO PF RESUME URL
-$finalURL = $pingfed. ":" . $pingfedPort . $resumePath . "?REF=" . $newREF;
+$finalURL = $pingfedFront. ":" . $pingfedPort . $resumePath . "?REF=" . $newREF;
 
 header("Location: $finalURL"); 
 exit();

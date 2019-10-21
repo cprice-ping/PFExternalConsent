@@ -3,7 +3,7 @@
 // SET SOME IMPORTANT VALUES
 $pingfed = "https://pingfederate";
 $pingfedPort = $_ENV["PF_BASE_PORT"];
-$pingdir = "https://pingdirectory";
+$pingdir = "https://localhost";
 $pingdirPort = "1443";
 
 // External Consent values

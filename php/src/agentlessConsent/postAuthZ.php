@@ -52,8 +52,6 @@ if ($err) {
 
 $responseData = json_decode($response, false);
 
-print_r($response);
-
 $escapeUserKey = "chainedattr.USER_KEY";
 $escapeAppName = "com.pingidentity.adapter.input.parameter.application.name";
 $escapeScopes = "com.pingidentity.adapter.input.parameter.oauth.scope";

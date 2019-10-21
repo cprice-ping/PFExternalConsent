@@ -4,7 +4,7 @@
 $pingfed = "https://pingfederate";
 $pingfedPort = $_ENV["PF_BASE_PORT"];
 $pingdir = "https://pingdirectory";
-$pingdirPort = "1443";
+$pingdirPort = "443";
 
 // External Consent values
 $adapterId = $_ENV["CONSENT_APP"];
@@ -129,7 +129,8 @@ if ($existingConsent > 0){
 		$uidArray = array("scopes" => $finalScopes);
 
 
-		$data2 = array("status" => "accepted",
+		$data2 = array(
+			"status" => "accepted",
 			"subject" => $userId,
 			"actor" => $userId,
 			"audience" => $audienceId,
@@ -142,7 +143,6 @@ if ($existingConsent > 0){
 		$data2_string = json_encode($data2);
 		
 		$curl = curl_init();
-
 
 		curl_setopt_array($curl, array(
 		  CURLOPT_PORT => $pingdirPort,

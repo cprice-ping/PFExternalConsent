@@ -1,10 +1,10 @@
 <?php
 
 // SET SOME IMPORTANT VALUES
-$pingfed = $_ENV["PF_BASE_URL"];
+$pingfed = "https://pingfederate";
 $pingfedPort = $_ENV["PF_BASE_PORT"];
-$pingdir = $_ENV["PD_BASE_URL"];
-$pingdirPort = $_ENV["PD_BASE_PORT"];
+$pingdir = "https://pingdirectory";
+$pingdirPort = "1443";
 
 // External Consent values
 $adapterId = $_ENV["CONSENT_APP"];

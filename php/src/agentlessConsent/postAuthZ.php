@@ -6,7 +6,7 @@ $resumePath = $_POST['resumePath'];
 
 // SET SOME IMPORTANT VALUES
 $title = $_ENV["PAGE_TITLE"];
-$pingfed = $_ENV["PF_BASE_URL"];
+$pingfed = "pingfederate";
 $pingfedPort = $_ENV["PF_BASE_PORT"];
 
 // External Consent values

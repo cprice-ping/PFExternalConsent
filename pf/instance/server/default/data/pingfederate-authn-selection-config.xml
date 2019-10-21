@@ -15,7 +15,7 @@
                         <urn:AttributeMapping>
                             <urn1:AttributeMap Name="entryUUID" Type="Adapter" AttributeSourceId="HTMLForm" Value="entryUUID" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:AttributeMap Name="mail" Type="Adapter" AttributeSourceId="HTMLForm" Value="mail" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
-                            <urn1:AttributeMap Name="subject" Type="Adapter" AttributeSourceId="HTMLForm" Value="entryUUID" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="subject" Type="Adapter" AttributeSourceId="HTMLForm" Value="subject" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                         </urn:AttributeMapping>
                     </urn:AstAction>

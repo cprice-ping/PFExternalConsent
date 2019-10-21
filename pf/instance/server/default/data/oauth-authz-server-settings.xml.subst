@@ -10,6 +10,6 @@
         <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
     </urn:ApcToUserKeyMapping>
     <urn:ReuseExistingPersistentGrantForGrant>implicit</urn:ReuseExistingPersistentGrantForGrant>
-    <urn:allowedOrigins>${CONSENT_HOST_URL}</urn:allowedOrigins>
-    <urn:allowedOrigins>${CONSENT_HOST_URL}:80</urn:allowedOrigins>
+    <urn:allowedOrigins>${CONSENT_APP_URL}</urn:allowedOrigins>
+    <urn:allowedOrigins>${CONSENT_APP_URL}:80</urn:allowedOrigins>
 </urn:OAuthConfig>

@@ -67,7 +67,6 @@ services:
   
   pingdataconsole:
     image: pingidentity/pingdataconsole:edge
-    environment:
     ports:
       - 8080:8080
       - 8443:8443
